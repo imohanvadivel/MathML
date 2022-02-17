@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Experimenting with Mathematical Markup Language (MathML)"
+    />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>MathML</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="depth1">
+      <div class="flex-h center">
+        <h1>MathML</h1>
+        <div class="flex-h center icons">
+          <a id="darkMode-toggle" class="flex center" href="javascript:void(0)">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.75 1.5H11.25V3.75H12.75V1.5Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M22.5 11.25H20.25V12.75H22.5V11.25Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M12.75 20.25H11.25V22.5H12.75V20.25Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M3.75 11.25H1.5V12.75H3.75V11.25Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M5.14806 4.102L4.0874 5.16266L5.67839 6.75365L6.73905 5.69299L5.14806 4.102Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M18.841 4.09466L17.25 5.68565L18.3107 6.74631L19.9017 5.15532L18.841 4.09466Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M18.3131 17.2517L17.2524 18.3123L18.8434 19.9033L19.9041 18.8427L18.3131 17.2517Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M4.10254 18.8475L5.69254 17.25L6.75004 18.315L5.16004 19.905L4.10254 18.8475Z"
+                fill="var(--foregroundColor)"
+              />
+              <path
+                d="M12 6C10.8133 6 9.65328 6.35189 8.66658 7.01118C7.67989 7.67047 6.91085 8.60754 6.45673 9.7039C6.0026 10.8003 5.88378 12.0067 6.11529 13.1705C6.3468 14.3344 6.91825 15.4035 7.75736 16.2426C8.59648 17.0818 9.66557 17.6532 10.8295 17.8847C11.9933 18.1162 13.1997 17.9974 14.2961 17.5433C15.3925 17.0892 16.3295 16.3201 16.9888 15.3334C17.6481 14.3467 18 13.1867 18 12C18 10.4087 17.3679 8.88258 16.2426 7.75736C15.1174 6.63214 13.5913 6 12 6ZM12 16.5C10.8065 16.5 9.66194 16.0259 8.81802 15.182C7.97411 14.3381 7.5 13.1935 7.5 12C7.5 10.8065 7.97411 9.66193 8.81802 8.81802C9.66194 7.97411 10.8065 7.5 12 7.5V16.5Z"
+                fill="var(--foregroundColor)"
+              />
+            </svg>
+          </a>
+          <a
+            class="github flex center"
+            target="_blank"
+            href="https://github.com/imohanvadivel/MathML"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.9996 1.50002C9.5068 1.50035 7.09544 2.38755 5.19686 4.00291C3.29828 5.61827 2.03634 7.85641 1.63677 10.317C1.2372 12.7775 1.72607 15.3 3.01593 17.4331C4.30579 19.5662 6.3125 21.1709 8.67709 21.96C9.20209 22.0575 9.42709 21.735 9.42709 21.4575C9.42709 21.18 9.42709 20.55 9.42709 19.6725C6.50959 20.3025 5.89459 18.2625 5.89459 18.2625C5.68943 17.6196 5.25763 17.0732 4.67959 16.725C3.72709 16.08 4.75459 16.0875 4.75459 16.0875C5.08729 16.1345 5.40485 16.2569 5.68302 16.4454C5.96119 16.6339 6.1926 16.8834 6.35959 17.175C6.65009 17.6961 7.13564 18.0804 7.70946 18.2436C8.28328 18.4067 8.89841 18.3353 9.41959 18.045C9.46193 17.5129 9.69654 17.0143 10.0796 16.6425C7.75459 16.3725 5.30209 15.4725 5.30209 11.4525C5.28508 10.4084 5.67201 9.39814 6.38209 8.63252C6.06068 7.72816 6.09826 6.735 6.48709 5.85752C6.48709 5.85752 7.36459 5.57252 9.37459 6.93002C11.0932 6.46123 12.906 6.46123 14.6246 6.93002C16.6271 5.57252 17.5046 5.85752 17.5046 5.85752C17.8934 6.735 17.931 7.72816 17.6096 8.63252C18.3197 9.39814 18.7066 10.4084 18.6896 11.4525C18.6896 15.4875 16.2371 16.3725 13.8971 16.635C14.1478 16.8891 14.341 17.1939 14.464 17.529C14.5869 17.8641 14.6365 18.2216 14.6096 18.5775C14.6096 19.98 14.6096 21.1125 14.6096 21.4575C14.6096 21.8025 14.7971 22.065 15.3596 21.96C17.7273 21.1699 19.7361 19.5622 21.0257 17.4251C22.3154 15.2881 22.8016 12.7615 22.3971 10.2984C21.9926 7.83535 20.7239 5.59695 18.8185 3.98459C16.9131 2.37224 14.4956 1.49139 11.9996 1.50002V1.50002Z"
+                fill="var(--foregroundColor)"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="desc">
+        <p>
+          Mathematical Markup Language (MathML) is the
+          <a target="_blank" href="https://w3c.github.io/mathml/"
+            >W3C recommended</a
+          >
+          way for typesetting mathematical and scientific content on the web,
+          and HTML5 natively supports it.
+        </p>
+        <p>
+          Unfortunately, only a few browsers, including Firefox and Safari,
+          support MathML natively. For chromium-based browsers, polyfills like
+          <a target="_blank" href="https://www.mathjax.org/">MathJax</a> can be
+          used for rendering.
+        </p>
+        <p>
+          <a target="_blank" href="https://www.w3.org/wiki/Math_Tools"
+            >MathML Tools →</a
+          >
+        </p>
+      </div>
+    </header>
+    <article class="m-eq">
+      <div class="m-in-eq hide-scrollbar">
+        <div class="browser-support">
+          MathML is not supported in your browsers yet, so a polyfill is used
+          for rendering. For a native MathML experience, try opening this
+          webpage from Firefox or Safari.
+        </div>
+
+        <!-- Unit Circle -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mfrac
+                  ><msup><mi>x</mi><mn>2</mn></msup
+                  ><msup><mi>a</mi><mn>2</mn></msup></mfrac
+                ><mo>+</mo
+                ><mfrac
+                  ><msup><mi>y</mi><mn>2</mn></msup
+                  ><msup><mi>b</mi><mn>2</mn></msup></mfrac
+                ><mo>=</mo><mn>1</mn></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+        <!-- Quadratic Equation -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>x</mi> <mo>=</mo>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <mo>&#x2212;</mo>
+                  <mi>b</mi>
+                  <mo>&#x00B1;</mo>
+                  <msqrt>
+                    <msup><mi>b</mi><mn>2</mn></msup>
+                    <mo>&#x2212;</mo>
+                    <mn>4</mn><mi>a</mi><mi>c</mi>
+                  </msqrt>
+                </mrow>
+                <mrow> <mn>2</mn><mi>a</mi> </mrow>
+              </mfrac>
+            </mrow>
+          </math>
+        </section>
+
+        <!-- Calculus -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>d</mi>
+            <mrow>
+              <mo>(</mo>
+              <mrow>
+                <msub>
+                  <mi>P</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>P</mi>
+                  <mn>2</mn>
+                </msub>
+              </mrow>
+              <mo>)</mo>
+            </mrow>
+            <mo>=</mo>
+            <msqrt>
+              <msup>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>&#x2212;<!-- − --></mo>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+              <mo>+</mo>
+              <msup>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>&#x2212;<!-- − --></mo>
+                    <msub>
+                      <mi>y</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+              <mo>+</mo>
+              <msup>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>2</mn>
+                    </msub>
+                    <mo>&#x2212;<!-- − --></mo>
+                    <msub>
+                      <mi>z</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+            </msqrt>
+          </math>
+        </section>
+
+        <!-- Trignomentry -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>cos</mi>
+            <mo>&#x2061;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>&#x3B8;</mi>
+            <mo>+</mo>
+            <mi>&#x3D5;</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mi>cos</mi>
+            <mo>&#x2061;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>&#x3B8;</mi>
+            <mo stretchy="false">)</mo>
+            <mi>cos</mi>
+            <mo>&#x2061;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>&#x3D5;</mi>
+            <mo stretchy="false">)</mo>
+            <mo>&#x2212;</mo>
+            <mi>sin</mi>
+            <mo>&#x2061;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>&#x3B8;</mi>
+            <mo stretchy="false">)</mo>
+            <mi>sin</mi>
+            <mo>&#x2061;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>&#x3D5;</mi>
+            <mo stretchy="false">)</mo>
+          </math>
+        </section>
+
+        <!-- Sets -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mi>A</mi><mo>⊆</mo><mi>B</mi><mo stretchy="false">↔</mo
+                ><mi>a</mi><mo>∊</mo><mi>A</mi><mo stretchy="false">→</mo
+                ><mi>a</mi><mo>∊</mo><mi>B</mi></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mi>x</mi><mo>∊</mo
+                ><mrow
+                  ><mo>{</mo
+                  ><mrow
+                    ><mfrac
+                      ><mrow
+                        ><mo>−</mo><mi>b</mi><mo>+</mo
+                        ><msqrt
+                          ><mrow
+                            ><mo>(</mo
+                            ><mrow
+                              ><msup><mi>b</mi><mn>2</mn></msup
+                              ><mo>−</mo><mn>4</mn
+                              ><mspace width="0.16666666666666666em"></mspace
+                              ><mi>a</mi
+                              ><mspace width="0.16666666666666666em"></mspace
+                              ><mi>c</mi></mrow
+                            ><mo>)</mo></mrow
+                          ></msqrt
+                        ></mrow
+                      ><mrow
+                        ><mn>2</mn
+                        ><mspace width="0.16666666666666666em"></mspace
+                        ><mi>a</mi></mrow
+                      ></mfrac
+                    ><mo>,</mo><mspace width="0.16666666666666666em"></mspace
+                    ><mfrac
+                      ><mrow
+                        ><mo>−</mo><mi>b</mi><mo>−</mo
+                        ><msqrt
+                          ><mrow
+                            ><mo>(</mo
+                            ><mrow
+                              ><msup><mi>b</mi><mn>2</mn></msup
+                              ><mo>−</mo><mn>4</mn
+                              ><mspace width="0.16666666666666666em"></mspace
+                              ><mi>a</mi
+                              ><mspace width="0.16666666666666666em"></mspace
+                              ><mi>c</mi></mrow
+                            ><mo>)</mo></mrow
+                          ></msqrt
+                        ></mrow
+                      ><mrow
+                        ><mn>2</mn
+                        ><mspace width="0.16666666666666666em"></mspace
+                        ><mi>a</mi></mrow
+                      ></mfrac
+                    ></mrow
+                  ><mo>}</mo></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Matrix -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mrow>
+              <mo>[</mo>
+              <mtable>
+                <mtr>
+                  <mtd><mn>1</mn></mtd>
+                  <mtd><mn>2</mn></mtd>
+                  <mtd><mn>3</mn></mtd>
+                </mtr>
+                <mtr>
+                  <mtd><mn>4</mn></mtd>
+                  <mtd><mn>5</mn></mtd>
+                  <mtd><mn>6</mn></mtd>
+                </mtr>
+                <mtr>
+                  <mtd><mn>7</mn></mtd>
+                  <mtd><mn>8</mn></mtd>
+                  <mtd><mn>9</mn></mtd>
+                </mtr>
+              </mtable>
+              <mo>]</mo>
+            </mrow>
+            <mo>×</mo>
+            <mrow>
+              <mo>[</mo>
+              <mtable>
+                <mtr>
+                  <mtd><mn>1</mn></mtd>
+                  <mtd><mn>0</mn></mtd>
+                  <mtd><mn>0</mn></mtd>
+                </mtr>
+                <mtr>
+                  <mtd><mn>0</mn></mtd>
+                  <mtd><mn>1</mn></mtd>
+                  <mtd><mn>0</mn></mtd>
+                </mtr>
+                <mtr>
+                  <mtd><mn>0</mn></mtd>
+                  <mtd><mn>0</mn></mtd>
+                  <mtd><mn>1</mn></mtd>
+                </mtr>
+              </mtable>
+              <mo>]</mo>
+            </mrow>
+            <mo>=</mo>
+            <mrow>
+              <mo>[</mo>
+              <mtable>
+                <mtr>
+                  <mtd><mn>1</mn></mtd>
+                  <mtd><mn>2</mn></mtd>
+                  <mtd><mn>3</mn></mtd>
+                </mtr>
+                <mtr>
+                  <mtd><mn>4</mn></mtd>
+                  <mtd><mn>5</mn></mtd>
+                  <mtd><mn>6</mn></mtd>
+                </mtr>
+                <mtr>
+                  <mtd><mn>7</mn></mtd>
+                  <mtd><mn>8</mn></mtd>
+                  <mtd><mn>9</mn></mtd>
+                </mtr>
+              </mtable>
+              <mo>]</mo>
+            </mrow>
+          </math>
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><msub
+                  ><mi>A</mi><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow></msub
+                ><mo>=</mo
+                ><mrow
+                  ><mo>(</mo
+                  ><mtable displaystyle="false" rowspacing="0.5ex"
+                    ><mtr
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msub
+                        ></mtd
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msub
+                        ></mtd
+                      ><mtd><mo>⋯</mo></mtd
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mn>1</mn><mo>,</mo><mi>n</mi></mrow></msub
+                        ></mtd
+                      ></mtr
+                    ><mtr
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mn>2</mn><mo>,</mo><mn>1</mn></mrow></msub
+                        ></mtd
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mn>2</mn><mo>,</mo><mn>2</mn></mrow></msub
+                        ></mtd
+                      ><mtd><mo>⋯</mo></mtd
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mn>2</mn><mo>,</mo><mi>n</mi></mrow></msub
+                        ></mtd
+                      ></mtr
+                    ><mtr
+                      ><mtd><mo>⋮</mo></mtd
+                      ><mtd><mo>⋮</mo></mtd
+                      ><mtd><mo>⋱</mo></mtd
+                      ><mtd><mo>⋮</mo></mtd></mtr
+                    ><mtr
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mi>m</mi><mo>,</mo><mn>1</mn></mrow></msub
+                        ></mtd
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mi>m</mi><mo>,</mo><mn>2</mn></mrow></msub
+                        ></mtd
+                      ><mtd><mo>⋯</mo></mtd
+                      ><mtd
+                        ><msub
+                          ><mi>a</mi
+                          ><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow></msub
+                        ></mtd
+                      ></mtr
+                    ></mtable
+                  ><mo>)</mo></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><msub><mi>𝐕</mi><mn>1</mn></msub
+                ><mo>×</mo><msub><mi>𝐕</mi><mn>2</mn></msub
+                ><mo>=</mo
+                ><mrow
+                  ><mo>|</mo
+                  ><mtable displaystyle="false" rowspacing="0.5ex"
+                    ><mtr
+                      ><mtd><mi>𝐢</mi></mtd
+                      ><mtd><mi>𝐣</mi></mtd
+                      ><mtd><mi>𝐤</mi></mtd></mtr
+                    ><mtr
+                      ><mtd
+                        ><mfrac
+                          ><mrow><mo>∂</mo><mi>X</mi></mrow
+                          ><mrow><mo>∂</mo><mi>u</mi></mrow></mfrac
+                        ></mtd
+                      ><mtd
+                        ><mfrac
+                          ><mrow><mo>∂</mo><mi>Y</mi></mrow
+                          ><mrow><mo>∂</mo><mi>u</mi></mrow></mfrac
+                        ></mtd
+                      ><mtd><mn>0</mn></mtd></mtr
+                    ><mtr
+                      ><mtd
+                        ><mfrac
+                          ><mrow><mo>∂</mo><mi>X</mi></mrow
+                          ><mrow><mo>∂</mo><mi>v</mi></mrow></mfrac
+                        ></mtd
+                      ><mtd
+                        ><mfrac
+                          ><mrow><mo>∂</mo><mi>Y</mi></mrow
+                          ><mrow><mo>∂</mo><mi>v</mi></mrow></mfrac
+                        ></mtd
+                      ><mtd><mn>0</mn></mtd></mtr
+                    ></mtable
+                  ><mo>|</mo></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi
+                ><mo stretchy="false">)</mo><mo>=</mo
+                ><mrow
+                  ><mo>{</mo
+                  ><mtable displaystyle="false" columnalign="left left"
+                    ><mtr
+                      ><mtd><mn>1</mn><mo>/</mo><mn>3</mn></mtd
+                      ><mtd
+                        ><mtext>if</mtext><mspace width="1em"></mspace><mn>0</mn
+                        ><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn><mo>;</mo></mtd
+                      ></mtr
+                    ><mtr
+                      ><mtd><mn>2</mn><mo>/</mo><mn>3</mn></mtd
+                      ><mtd
+                        ><mtext>if</mtext><mspace width="1em"></mspace><mn>3</mn
+                        ><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>4</mn><mo>;</mo></mtd
+                      ></mtr
+                    ><mtr
+                      ><mtd><mn>0</mn></mtd
+                      ><mtd><mtext>elsewhere</mtext><mo>.</mo></mtd></mtr
+                    ></mtable
+                  ></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <sectoin class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mfrac
+                  ><mrow><mi>n</mi><mo>!</mo></mrow
+                  ><mrow
+                    ><mi>k</mi><mo>!</mo><mo stretchy="false">(</mo><mi>n</mi
+                    ><mo>−</mo><mi>k</mi><mo stretchy="false">)</mo
+                    ><mo>!</mo></mrow
+                  ></mfrac
+                ><mo>=</mo
+                ><mrow
+                  ><mo>(</mo
+                  ><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac
+                  ><mo>)</mo></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </sectoin>
+
+        <!-- Summation -->
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><munderover
+                  ><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow
+                  ><mrow><mo>+</mo><mn>∞</mn></mrow></munderover
+                ><mfrac
+                  ><mn>1</mn><msup><mi>n</mi><mn>2</mn></msup></mfrac
+                ><mo>=</mo
+                ><mfrac
+                  ><msup><mi>π</mi><mn>2</mn></msup
+                  ><mn>6</mn></mfrac
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><munderover
+                  ><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow
+                  ><mn>∞</mn></munderover
+                ><mfrac><mn>1</mn><mi>n</mi></mfrac
+                ><mo>=</mo><mn>∞</mn></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Integrals -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><msubsup><mo>∫</mo><mn>0</mn><mn>∞</mn></msubsup
+                ><msup
+                  ><mi mathvariant="normal">e</mi
+                  ><mrow><mo>−</mo><mi>x</mi></mrow></msup
+                ><mspace width="0.16666666666666666em"></mspace
+                ><mi mathvariant="normal">d</mi><mi>x</mi></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math>
+            <msubsup> <mo>∫</mo> <mi>a</mi> <mi>b</mi> </msubsup>
+            <mrow>
+              <mi>f</mi> <mo>(</mo> <mi>x</mi> <mo>)</mo> <mi>dx</mi>
+            </mrow>
+            <mrow>
+              <mfrac>
+                <mo>∂</mo> <mrow> <mo>∂</mo> <mi>x</mi> </mrow>
+              </mfrac>
+              <mrow>
+                <mi>F</mi> <mo>(</mo> <mi>x</mi> <mo>,</mo> <mi>y</mi>
+                <mo>)</mo>
+              </mrow>
+              <mo>+</mo>
+              <mfrac>
+                <mo>∂</mo> <mrow> <mo>∂</mo> <mi>y</mi> </mrow>
+              </mfrac>
+              <mrow>
+                <mi>F</mi> <mo>(</mo> <mi>x</mi> <mo>,</mo> <mi>y</mi>
+                <mo>)</mo>
+              </mrow>
+            </mrow>
+          </math>
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <munder>
+              <mo>&#x222D;<!-- ∭ --></mo>
+              <mrow>
+                <mi>E</mi>
+              </mrow>
+            </munder>
+            <mrow>
+              <mrow>
+                <mi>f</mi>
+                <mrow>
+                  <mo>(</mo>
+                  <mrow>
+                    <mi>x</mi>
+                    <mo>,</mo>
+                    <mi>y</mi>
+                    <mo>,</mo>
+                    <mi>z</mi>
+                  </mrow>
+                  <mo>)</mo>
+                </mrow>
+                <mspace width="thinmathspace" />
+                <mi>d</mi>
+                <mi>V</mi>
+              </mrow>
+            </mrow>
+            <mo>=</mo>
+            <munder>
+              <mo>&#x222C;<!-- ∬ --></mo>
+              <mrow>
+                <mi>D</mi>
+              </mrow>
+            </munder>
+            <mrow>
+              <mrow>
+                <mrow>
+                  <mo>[</mo>
+                  <mrow>
+                    <msubsup>
+                      <mo>&#x222B;<!-- ∫ --></mo>
+                      <mrow>
+                        <mrow>
+                          <mspace width="thinmathspace" />
+                          <mrow>
+                            <msub>
+                              <mi>u</mi>
+                              <mn>1</mn>
+                            </msub>
+                          </mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mi>x</mi>
+                              <mo>,</mo>
+                              <mi>z</mi>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </mrow>
+                      <mrow>
+                        <mrow>
+                          <mspace width="thinmathspace" />
+                          <mrow>
+                            <msub>
+                              <mi>u</mi>
+                              <mn>2</mn>
+                            </msub>
+                          </mrow>
+                          <mrow>
+                            <mo>(</mo>
+                            <mrow>
+                              <mi>x</mi>
+                              <mo>,</mo>
+                              <mi>z</mi>
+                            </mrow>
+                            <mo>)</mo>
+                          </mrow>
+                        </mrow>
+                      </mrow>
+                    </msubsup>
+                    <mrow>
+                      <mrow>
+                        <mi>f</mi>
+                        <mrow>
+                          <mo>(</mo>
+                          <mrow>
+                            <mi>x</mi>
+                            <mo>,</mo>
+                            <mi>y</mi>
+                            <mo>,</mo>
+                            <mi>z</mi>
+                          </mrow>
+                          <mo>)</mo>
+                        </mrow>
+                        <mspace width="thinmathspace" />
+                        <mi>d</mi>
+                        <mi>y</mi>
+                      </mrow>
+                    </mrow>
+                  </mrow>
+                  <mo>]</mo>
+                </mrow>
+                <mspace width="thinmathspace" />
+                <mi>d</mi>
+                <mi>A</mi>
+              </mrow>
+            </mrow>
+          </math>
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>f</mi>
+            <mo stretchy="false">(</mo>
+            <mi>a</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mn>2</mn>
+                <mi>π</mi>
+                <mi>i</mi>
+              </mrow>
+            </mfrac>
+            <mo>∮</mo>
+            <mfrac>
+              <mrow>
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <mi>z</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow>
+                <mi>z</mi>
+                <mo>−</mo>
+                <mi>a</mi>
+              </mrow>
+            </mfrac>
+            <mi>d</mi>
+            <mi>z</mi>
+          </math>
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <msub>
+              <mo>∫</mo>
+              <mi>D</mi>
+            </msub>
+            <mo stretchy="false">(</mo>
+            <mrow>
+              <mi mathvariant="normal">∇</mi>
+              <mo>⋅</mo>
+            </mrow>
+            <mi>F</mi>
+            <mo stretchy="false">)</mo>
+            <mi>d</mi>
+            <mi>V</mi>
+            <mo>=</mo>
+            <msub>
+              <mo>∫</mo>
+              <mrow>
+                <mi>∂</mi>
+                <mi>D</mi>
+              </mrow>
+            </msub>
+            <mi>F</mi>
+            <mo>⋅</mo>
+            <mi>n</mi>
+            <mi>d</mi>
+            <mi>S</mi>
+          </math>
+        </section>
+
+        <!-- Differentiation -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mfrac
+                  ><mi mathvariant="normal">d</mi
+                  ><mrow><mi mathvariant="normal">d</mi><mi>x</mi></mrow></mfrac
+                ><mrow
+                  ><mo>(</mo
+                  ><mrow
+                    ><mo lspace="0em" rspace="0em">arcsin</mo
+                    ><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow
+                  ><mo>)</mo></mrow
+                ><mo>=</mo
+                ><mfrac
+                  ><mn>1</mn
+                  ><msqrt
+                    ><mrow
+                      ><mo>(</mo
+                      ><mrow
+                        ><mn>1</mn><mo>−</mo
+                        ><msup><mi>x</mi><mn>2</mn></msup></mrow
+                      ><mo>)</mo></mrow
+                    ></msqrt
+                  ></mfrac
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mfrac
+                  ><mrow><mo>∂</mo><mi>V</mi></mrow
+                  ><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac
+                ><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac
+                ><msup><mi>σ</mi><mn>2</mn></msup
+                ><msup><mi>S</mi><mn>2</mn></msup
+                ><mfrac
+                  ><mrow
+                    ><msup><mo>∂</mo><mn>2</mn></msup
+                    ><mi>V</mi></mrow
+                  ><mrow
+                    ><mo>∂</mo><msup><mi>S</mi><mn>2</mn></msup></mrow
+                  ></mfrac
+                ><mo>+</mo><mi>r</mi><mi>S</mi
+                ><mfrac
+                  ><mrow><mo>∂</mo><mi>V</mi></mrow
+                  ><mrow><mo>∂</mo><mi>S</mi></mrow></mfrac
+                ><mo>−</mo><mi>r</mi><mi>V</mi><mo>=</mo><mn>0</mn></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mfrac>
+              <mrow>
+                <mrow>
+                  <msup>
+                    <mi mathvariant="normal">&#x2202;<!-- ∂ --></mi>
+                    <mn>2</mn>
+                  </msup>
+                </mrow>
+                <mi>u</mi>
+              </mrow>
+              <mrow>
+                <mi mathvariant="normal">&#x2202;<!-- ∂ --></mi>
+                <mrow>
+                  <msup>
+                    <mi>t</mi>
+                    <mn>2</mn>
+                  </msup>
+                </mrow>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mrow>
+              <msup>
+                <mi>c</mi>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+            <mspace width="thinmathspace" />
+            <mrow>
+              <msup>
+                <mi mathvariant="normal">&#x2207;<!-- ∇ --></mi>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+            <mi>u</mi>
+          </math>
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mrow>
+              <mover>
+                <mi mathvariant="normal">&#x2207;</mi>
+                <mo stretchy="false">&#x2192;</mo>
+              </mover>
+            </mrow>
+            <mo>&#xD7;</mo>
+            <mrow>
+              <mover>
+                <mi>F</mi>
+                <mo stretchy="false">&#x2192;</mo>
+              </mover>
+            </mrow>
+            <mo>=</mo>
+            <mrow>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msub>
+                    <mi>F</mi>
+                    <mi>z</mi>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msub>
+                    <mi>F</mi>
+                    <mi>y</mi>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <mi>z</mi>
+                </mrow>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mi mathvariant="bold">i</mi>
+            <mo>+</mo>
+            <mrow>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msub>
+                    <mi>F</mi>
+                    <mi>x</mi>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <mi>z</mi>
+                </mrow>
+              </mfrac>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msub>
+                    <mi>F</mi>
+                    <mi>z</mi>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mi mathvariant="bold">j</mi>
+            <mo>+</mo>
+            <mrow>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msub>
+                    <mi>F</mi>
+                    <mi>y</mi>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <mi>x</mi>
+                </mrow>
+              </mfrac>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msub>
+                    <mi>F</mi>
+                    <mi>x</mi>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <mi>y</mi>
+                </mrow>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mi mathvariant="bold">k</mi>
+          </math>
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi mathvariant="normal">&#x2207;</mi>
+              <mi>X</mi>
+            </msub>
+            <mi>Y</mi>
+            <msup>
+              <mo stretchy="false">)</mo>
+              <mi>k</mi>
+            </msup>
+            <mo>=</mo>
+            <msup>
+              <mi>X</mi>
+              <mi>i</mi>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <msub>
+              <mi mathvariant="normal">&#x2207;</mi>
+              <mi>i</mi>
+            </msub>
+            <mi>Y</mi>
+            <msup>
+              <mo stretchy="false">)</mo>
+              <mi>k</mi>
+            </msup>
+            <mo>=</mo>
+            <msup>
+              <mi>X</mi>
+              <mi>i</mi>
+            </msup>
+            <mrow>
+              <mo>(</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msup>
+                    <mi>Y</mi>
+                    <mi>k</mi>
+                  </msup>
+                </mrow>
+                <mrow>
+                  <mi>&#x2202;</mi>
+                  <msup>
+                    <mi>x</mi>
+                    <mi>i</mi>
+                  </msup>
+                </mrow>
+              </mfrac>
+              <mo>+</mo>
+              <msubsup>
+                <mi mathvariant="normal">&#x393;</mi>
+                <mrow>
+                  <mi>i</mi>
+                  <mi>m</mi>
+                </mrow>
+                <mi>k</mi>
+              </msubsup>
+              <msup>
+                <mi>Y</mi>
+                <mi>m</mi>
+              </msup>
+              <mo>)</mo>
+            </mrow>
+          </math>
+        </section>
+
+        <!-- Limit -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><msup><mi>f</mi><mo>′</mo></msup
+                ><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow
+                ><mo>=</mo
+                ><munder
+                  ><mo lspace="0em" rspace="0em">lim</mo
+                  ><mrow
+                    ><mi>h</mi><mo stretchy="false">→</mo><mn>0</mn></mrow
+                  ></munder
+                ><mfrac
+                  ><mrow
+                    ><mi>f</mi
+                    ><mrow
+                      ><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow
+                      ><mo>)</mo></mrow
+                    ><mo>−</mo><mi>f</mi
+                    ><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow
+                  ><mi>h</mi></mfrac
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><munder
+                  ><mo lspace="0em" rspace="0em">lim</mo
+                  ><mrow
+                    ><mi>n</mi><mo stretchy="false">→</mo><mn>∞</mn></mrow
+                  ></munder
+                ><msup
+                  ><mrow
+                    ><mo>(</mo
+                    ><mrow
+                      ><mn>1</mn><mo>+</mo
+                      ><mfrac><mi>r</mi><mi>n</mi></mfrac></mrow
+                    ><mo>)</mo></mrow
+                  ><mfrac><mi>t</mi><mi>n</mi></mfrac></msup
+                ><mo>=</mo
+                ><msup
+                  ><mi mathvariant="normal">e</mi
+                  ><mrow
+                    ><mi>r</mi><mspace width="0.16666666666666666em"></mspace
+                    ><mi>t</mi></mrow
+                  ></msup
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Gamma Equations -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mi mathvariant="normal">Γ</mi><mo stretchy="false">(</mo
+                ><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo
+                ><munder
+                  ><mo lspace="0em" rspace="0em">lim</mo
+                  ><mrow
+                    ><mi>n</mi><mo stretchy="false">→</mo><mn>∞</mn></mrow
+                  ></munder
+                ><mfrac
+                  ><mrow
+                    ><mi>n</mi><mo>!</mo
+                    ><mspace width="0.2777777777777778em"></mspace
+                    ><msup><mi>n</mi><mi>t</mi></msup></mrow
+                  ><mrow
+                    ><mi>t</mi><mspace width="0.2777777777777778em"></mspace
+                    ><mo stretchy="false">(</mo><mi>t</mi><mo>+</mo><mn>1</mn
+                    ><mo stretchy="false">)</mo><mo>⋯</mo
+                    ><mo stretchy="false">(</mo><mi>t</mi><mo>+</mo><mi>n</mi
+                    ><mo stretchy="false">)</mo></mrow
+                  ></mfrac
+                ><mo>=</mo><mfrac><mn>1</mn><mi>t</mi></mfrac
+                ><munderover
+                  ><mo>∏</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow
+                  ><mn>∞</mn></munderover
+                ><mfrac
+                  ><msup
+                    ><mrow
+                      ><mo>(</mo
+                      ><mrow
+                        ><mn>1</mn><mo>+</mo
+                        ><mfrac><mn>1</mn><mi>n</mi></mfrac></mrow
+                      ><mo>)</mo></mrow
+                    ><mi>t</mi></msup
+                  ><mrow
+                    ><mn>1</mn><mo>+</mo
+                    ><mfrac><mi>t</mi><mi>n</mi></mfrac></mrow
+                  ></mfrac
+                ><mo>=</mo
+                ><mfrac
+                  ><msup
+                    ><mi>e</mi><mrow><mo>−</mo><mi>γ</mi><mi>t</mi></mrow></msup
+                  ><mi>t</mi></mfrac
+                ><munderover
+                  ><mo>∏</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow
+                  ><mn>∞</mn></munderover
+                ><msup
+                  ><mrow
+                    ><mo>(</mo
+                    ><mrow
+                      ><mn>1</mn><mo>+</mo
+                      ><mfrac><mi>t</mi><mi>n</mi></mfrac></mrow
+                    ><mo>)</mo></mrow
+                  ><mrow><mo>−</mo><mn>1</mn></mrow></msup
+                ><msup
+                  ><mi>e</mi><mfrac><mi>t</mi><mi>n</mi></mfrac></msup
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mrow
+                  ><mi mathvariant="normal">Γ</mi><mo stretchy="false">(</mo
+                  ><mi>t</mi><mo stretchy="false">)</mo></mrow
+                ><mo>=</mo
+                ><mrow
+                  ><msubsup
+                    ><mo>∫</mo><mn>0</mn
+                    ><mrow><mo>+</mo><mn>∞</mn></mrow></msubsup
+                  ><msup
+                    ><mi>x</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msup
+                  ><msup
+                    ><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup
+                  ><mi>d</mi><mi>x</mi></mrow
+                ><mo>=</mo
+                ><mrow
+                  ><mfrac><mn>1</mn><mi>t</mi></mfrac
+                  ><munderover
+                    ><mo>∏</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow
+                    ><mn>∞</mn></munderover
+                  ><mfrac
+                    ><msup
+                      ><mrow
+                        ><mo>(</mo
+                        ><mrow
+                          ><mn>1</mn><mo>+</mo
+                          ><mfrac><mn>1</mn><mi>n</mi></mfrac></mrow
+                        ><mo>)</mo></mrow
+                      ><mi>t</mi></msup
+                    ><mrow
+                      ><mn>1</mn><mo>+</mo
+                      ><mfrac><mi>t</mi><mi>n</mi></mfrac></mrow
+                    ></mfrac
+                  ></mrow
+                ><mo>∼</mo
+                ><mrow
+                  ><msqrt
+                    ><mfrac
+                      ><mrow><mn>2</mn><mi>π</mi></mrow
+                      ><mi>t</mi></mfrac
+                    ></msqrt
+                  ><msup
+                    ><mrow
+                      ><mo>(</mo><mfrac><mi>t</mi><mi>e</mi></mfrac
+                      ><mo>)</mo></mrow
+                    ><mi>t</mi></msup
+                  ></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Laplace Transform -->
+
+        <secrion class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mtable displaystyle="true">
+              <mlabeledtr>
+                <mtd id="mjx-eqn-eqeq1">
+                  <mtext>(1)</mtext>
+                </mtd>
+                <mtd>
+                  <mi class="MJX-tex-caligraphic" mathvariant="script">L</mi>
+                  <mrow>
+                    <mo>{</mo>
+                    <mrow>
+                      <mi>f</mi>
+                      <mrow>
+                        <mo>(</mo>
+                        <mi>t</mi>
+                        <mo>)</mo>
+                      </mrow>
+                    </mrow>
+                    <mo>}</mo>
+                  </mrow>
+                  <mo>=</mo>
+                  <msubsup>
+                    <mo>&#x222B;<!-- ∫ --></mo>
+                    <mrow>
+                      <mspace width="thinmathspace" />
+                      <mn>0</mn>
+                    </mrow>
+                    <mrow>
+                      <mspace width="thinmathspace" />
+                      <mi mathvariant="normal">&#x221E;<!-- ∞ --></mi>
+                    </mrow>
+                  </msubsup>
+                  <mrow>
+                    <msup>
+                      <mi mathvariant="bold">e</mi>
+                      <mrow>
+                        <mo>&#x2212;<!-- − --></mo>
+                        <mi>s</mi>
+                        <mspace width="thinmathspace" />
+                        <mi>t</mi>
+                      </mrow>
+                    </msup>
+                    <mi>f</mi>
+                    <mrow>
+                      <mo>(</mo>
+                      <mi>t</mi>
+                      <mo>)</mo>
+                    </mrow>
+                    <mspace width="thinmathspace" />
+                    <mi>d</mi>
+                    <mi>t</mi>
+                  </mrow>
+                </mtd>
+              </mlabeledtr>
+            </mtable>
+          </math>
+        </secrion>
+
+        <!-- Fourier Transform -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi
+                ><mo stretchy="false">)</mo><mo>=</mo
+                ><munderover
+                  ><mo>∑</mo
+                  ><mrow><mi>n</mi><mo>=</mo><mo>−</mo><mn>∞</mn></mrow
+                  ><mn>∞</mn></munderover
+                ><msub><mi>c</mi><mi>n</mi></msub
+                ><msup
+                  ><mi>e</mi
+                  ><mrow
+                    ><mn>2</mn><mi>π</mi><mi>i</mi><mo stretchy="false">(</mo
+                    ><mi>n</mi><mo>/</mo><mi>T</mi><mo stretchy="false">)</mo
+                    ><mi>x</mi></mrow
+                  ></msup
+                ><mo>=</mo
+                ><munderover
+                  ><mo>∑</mo
+                  ><mrow><mi>n</mi><mo>=</mo><mo>−</mo><mn>∞</mn></mrow
+                  ><mn>∞</mn></munderover
+                ><mover><mi>f</mi><mo stretchy="false">^</mo></mover
+                ><mo stretchy="false">(</mo><msub><mi>ξ</mi><mi>n</mi></msub
+                ><mo stretchy="false">)</mo
+                ><msup
+                  ><mi>e</mi
+                  ><mrow
+                    ><mn>2</mn><mi>π</mi><mi>i</mi
+                    ><msub><mi>ξ</mi><mi>n</mi></msub
+                    ><mi>x</mi></mrow
+                  ></msup
+                ><mi mathvariant="normal">Δ</mi><mi>ξ</mi></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Lorentz Equation -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mtable
+                displaystyle="true"
+                columnalign="right left right left right left right left right left"
+                columnspacing="0em"
+                ><mtr
+                  ><mtd
+                    ><mover><mi>x</mi><mo>˙</mo></mover></mtd
+                  ><mtd
+                    ><mo>=</mo><mi>σ</mi><mo stretchy="false">(</mo><mi>y</mi
+                    ><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mtd
+                  ></mtr
+                ><mtr
+                  ><mtd
+                    ><mover><mi>y</mi><mo>˙</mo></mover></mtd
+                  ><mtd
+                    ><mo>=</mo><mi>ρ</mi><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo
+                    ><mi>x</mi><mi>z</mi></mtd
+                  ></mtr
+                ><mtr
+                  ><mtd
+                    ><mover><mi>z</mi><mo>˙</mo></mover></mtd
+                  ><mtd
+                    ><mo>=</mo><mo>−</mo><mi>β</mi><mi>z</mi><mo>+</mo><mi>x</mi
+                    ><mi>y</mi></mtd
+                  ></mtr
+                ></mtable
+              ></semantics
+            ></math
+          >
+        </section>
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><msup
+                  ><mrow
+                    ><mo>(</mo
+                    ><mrow
+                      ><munderover
+                        ><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow
+                        ><mi>n</mi></munderover
+                      ><msub><mi>a</mi><mi>k</mi></msub
+                      ><msub><mi>b</mi><mi>k</mi></msub></mrow
+                    ><mo>)</mo></mrow
+                  ><mn>2</mn></msup
+                ><mo>≤</mo
+                ><mrow
+                  ><mo>(</mo
+                  ><mrow
+                    ><munderover
+                      ><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow
+                      ><mi>n</mi></munderover
+                    ><msubsup><mi>a</mi><mi>k</mi><mn>2</mn></msubsup></mrow
+                  ><mo>)</mo></mrow
+                ><mrow
+                  ><mo>(</mo
+                  ><mrow
+                    ><munderover
+                      ><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow
+                      ><mi>n</mi></munderover
+                    ><msubsup><mi>b</mi><mi>k</mi><mn>2</mn></msubsup></mrow
+                  ><mo>)</mo></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Maxwell's Equation -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mtable
+                displaystyle="true"
+                columnalign="right left right left right left right left right left"
+                columnspacing="0em"
+                ><mtr
+                  ><mtd
+                    ><mo>∇</mo><mo>×</mo
+                    ><mover><mi>𝐁</mi><mo stretchy="false">⇀</mo></mover
+                    ><mo>−</mo><mspace width="0.16666666666666666em"></mspace
+                    ><mfrac><mn>1</mn><mi>c</mi></mfrac
+                    ><mspace width="0.16666666666666666em"></mspace
+                    ><mfrac
+                      ><mrow
+                        ><mo>∂</mo
+                        ><mover
+                          ><mi>𝐄</mi><mo stretchy="false">⇀</mo></mover
+                        ></mrow
+                      ><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac
+                    ></mtd
+                  ><mtd
+                    ><mo>=</mo
+                    ><mfrac
+                      ><mrow><mn>4</mn><mi>π</mi></mrow
+                      ><mi>c</mi></mfrac
+                    ><mover><mi>𝐣</mi><mo stretchy="false">⇀</mo></mover></mtd
+                  ></mtr
+                ><mtr
+                  ><mtd
+                    ><mo>∇</mo><mo>⋅</mo
+                    ><mover><mi>𝐄</mi><mo stretchy="false">⇀</mo></mover></mtd
+                  ><mtd><mo>=</mo><mn>4</mn><mi>π</mi><mi>ρ</mi></mtd></mtr
+                ><mtr
+                  ><mtd
+                    ><mo>∇</mo><mo>×</mo
+                    ><mover><mi>𝐄</mi><mo stretchy="false">⇀</mo></mover
+                    ><mspace width="0.16666666666666666em"></mspace><mo>+</mo
+                    ><mspace width="0.16666666666666666em"></mspace
+                    ><mfrac><mn>1</mn><mi>c</mi></mfrac
+                    ><mspace width="0.16666666666666666em"></mspace
+                    ><mfrac
+                      ><mrow
+                        ><mo>∂</mo
+                        ><mover
+                          ><mi>𝐁</mi><mo stretchy="false">⇀</mo></mover
+                        ></mrow
+                      ><mrow><mo>∂</mo><mi>t</mi></mrow></mfrac
+                    ></mtd
+                  ><mtd
+                    ><mo>=</mo
+                    ><mover><mn>𝟎</mn><mo stretchy="false">⇀</mo></mover></mtd
+                  ></mtr
+                ><mtr
+                  ><mtd
+                    ><mo>∇</mo><mo>⋅</mo
+                    ><mover><mi>𝐁</mi><mo stretchy="false">⇀</mo></mover></mtd
+                  ><mtd><mo>=</mo><mn>0</mn></mtd></mtr
+                ></mtable
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mstyle displaystyle="true"
+                ><msub><mi>a</mi><mn>0</mn></msub
+                ><mo>+</mo
+                ><mfrac
+                  ><mn>1</mn
+                  ><mstyle displaystyle="true"
+                    ><msub><mi>a</mi><mn>1</mn></msub
+                    ><mo>+</mo
+                    ><mfrac
+                      ><mn>1</mn
+                      ><mstyle displaystyle="true"
+                        ><msub><mi>a</mi><mn>2</mn></msub
+                        ><mo>+</mo
+                        ><mfrac
+                          ><mn>1</mn
+                          ><mstyle displaystyle="true"
+                            ><msub><mi>a</mi><mn>3</mn></msub
+                            ><mo>+</mo
+                            ><mfrac
+                              ><mn>1</mn
+                              ><mstyle displaystyle="true"
+                                ><msub><mi>a</mi><mn>4</mn></msub></mstyle
+                              ></mfrac
+                            ></mstyle
+                          ></mfrac
+                        ></mstyle
+                      ></mfrac
+                    ></mstyle
+                  ></mfrac
+                ></mstyle
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Ramanujan Identity -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mfrac
+                  ><mn>1</mn
+                  ><mrow
+                    ><mo maxsize="1.8em" minsize="1.8em">(</mo
+                    ><msqrt
+                      ><mrow
+                        ><mi>ϕ</mi><msqrt><mn>5</mn></msqrt></mrow
+                      ></msqrt
+                    ><mo>−</mo><mi>ϕ</mi
+                    ><mo maxsize="1.8em" minsize="1.8em">)</mo
+                    ><msup
+                      ><mi>e</mi><mfrac><mn>25</mn><mi>π</mi></mfrac></msup
+                    ></mrow
+                  ></mfrac
+                ><mo>=</mo><mn>1</mn><mo>+</mo
+                ><mfrac
+                  ><msup
+                    ><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>π</mi></mrow></msup
+                  ><mrow
+                    ><mn>1</mn><mo>+</mo
+                    ><mfrac
+                      ><msup
+                        ><mi>e</mi
+                        ><mrow><mo>−</mo><mn>4</mn><mi>π</mi></mrow></msup
+                      ><mrow
+                        ><mn>1</mn><mo>+</mo
+                        ><mfrac
+                          ><msup
+                            ><mi>e</mi
+                            ><mrow><mo>−</mo><mn>6</mn><mi>π</mi></mrow></msup
+                          ><mrow
+                            ><mn>1</mn><mo>+</mo
+                            ><mfrac
+                              ><msup
+                                ><mi>e</mi
+                                ><mrow
+                                  ><mo>−</mo><mn>8</mn><mi>π</mi></mrow
+                                ></msup
+                              ><mrow
+                                ><mn>1</mn><mo>+</mo><mo>…</mo></mrow
+                              ></mfrac
+                            ></mrow
+                          ></mfrac
+                        ></mrow
+                      ></mfrac
+                    ></mrow
+                  ></mfrac
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Big O -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
+            ><semantics
+              ><mrow
+                ><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow
+                ><mo>∊</mo><mi>O</mi
+                ><mrow
+                  ><mo>(</mo
+                  ><mrow
+                    ><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow
+                  ><mo>)</mo></mrow
+                ><mo stretchy="false">↔</mo><mo>∃</mo><mi>x</mi
+                ><msub><mrow></mrow><mn>0</mn></msub
+                ><mo>∊</mo><mi>ℤ</mi
+                ><mspace width="0.2777777777777778em"></mspace><mo>∃</mo
+                ><mi>C</mi><mo>∊</mo><mi>ℝ</mi
+                ><mspace width="0.2777777777777778em"></mspace><mo>∀</mo
+                ><mi>x</mi><mo>&gt;</mo><mi>x</mi
+                ><msub><mrow></mrow><mn>0</mn></msub
+                ><mspace width="0.2777777777777778em"></mspace
+                ><mrow
+                  ><mo>|</mo
+                  ><mrow
+                    ><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow
+                  ><mo>|</mo></mrow
+                ><mo>≤</mo><mi>C</mi
+                ><mspace width="0.16666666666666666em"></mspace
+                ><mrow
+                  ><mo>|</mo
+                  ><mrow
+                    ><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow
+                  ><mo>|</mo></mrow
+                ></mrow
+              ></semantics
+            ></math
+          >
+        </section>
+
+        <!-- Standard Deviation -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>&#x3C3;</mi>
+            <mo>=</mo>
+            <msqrt>
+              <mfrac>
+                <mn>1</mn>
+                <mi>N</mi>
+              </mfrac>
+              <munderover>
+                <mo>&#x2211;</mo>
+                <mrow>
+                  <mi>i</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>N</mi>
+              </munderover>
+              <mo stretchy="false">(</mo>
+              <msub>
+                <mi>x</mi>
+                <mi>i</mi>
+              </msub>
+              <mo>&#x2212;</mo>
+              <mi>&#x3BC;</mi>
+              <msup>
+                <mo stretchy="false">)</mo>
+                <mn>2</mn>
+              </msup>
+            </msqrt>
+          </math>
+        </section>
+
+        <!-- Chemistry -->
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msub>
+              <mi>CH</mi>
+              <mn>4</mn>
+            </msub>
+            <mo>+</mo>
+            <mn>2</mn>
+            <msub>
+              <mi>O</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>&#8594;</mo>
+            <msub>
+              <mi>CO</mi>
+              <mn>2</mn>
+            </msub>
+            <mo>+</mo>
+            <mn>2</mn>
+            <msub>
+              <mi>H</mi>
+              <mn>2</mn>
+            </msub>
+            <mi>O</mi>
+          </math>
+        </section>
+
+        <section class="m-el">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <msup>
+              <mi>Ca</mi>
+              <mo>2+</mo>
+            </msup>
+            <mo>+</mo>
+            <mn>2</mn>
+            <msup>
+              <mi>Cl</mi>
+              <mo>-</mo>
+            </msup>
+            <mo>+</mo>
+            <mn>2</mn>
+            <msup>
+              <mi>Ag</mi>
+              <mo>+</mo>
+            </msup>
+            <mo>+</mo>
+            <mn>2</mn>
+            <msup>
+              <msub>
+                <mi>NO</mi>
+                <mn>3</mn>
+              </msub>
+              <mi>-</mi>
+            </msup>
+            <mo>&#8594;</mo>
+            <msup>
+              <mi>Ca</mi>
+              <mo>2+</mo>
+            </msup>
+            <mo>+</mo>
+            <mn>2</mn>
+            <msup>
+              <msub>
+                <mi>NO</mi>
+                <mn>3</mn>
+              </msub>
+              <mi>-</mi>
+            </msup>
+            <mo>+</mo>
+            <mn>2</mn>
+            <mi>Ag</mi>
+            <mi>Cl</mi>
+            <mi>(s)</mi>
+          </math>
+        </section>
+      </div>
+    </article>
+  </body>
+
+  <script src="./script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/grilles@1.0.3/grille.debug.css" />
+  <script src="https://unpkg.com/grilles@1.0.3/debug.js"></script>
+</html>

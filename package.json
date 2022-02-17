@@ -1,0 +1,22 @@
+{
+  "name": "MathML",
+  "license": "MIT",
+  "author": "Mohan Vadivel <https://mohanvadivel.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imohanvadivel/mathml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imohanvadivel/mathml/issues"
+  },
+  "scripts": {
+    "dev": "esbuild src/style.css src/script.js --bundle --watch --outdir=./",
+    "build": "esbuild src/style.css src/script.js --bundle --minify --outdir=./"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.22"
+  },
+  "dependencies": {
+    "grilles": "^1.0.5"
+  }
+}
