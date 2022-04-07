@@ -17,6 +17,6 @@
     "esbuild": "^0.14.22"
   },
   "dependencies": {
-    "grilles": "^1.0.5"
+    "grilles": "^1.0.6"
   }
 }
